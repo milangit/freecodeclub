@@ -107,6 +107,10 @@
             }
             
             function drawGameOver(hrac) {
+                var d = new Date();
+                myDataRef.push({winner: hrac, timestamp: d.toTimeString()});
+    
+                
                 ctx2.clearRect(0, 0, canvas.width, canvas.height); //vyčisti plátno
                 ctx2.font = "20px Courier New";
                 ctx2.fillStyle = "white";
@@ -141,11 +145,11 @@
                 ctx2.fillText("angle2 " + Math.round(angle2) + " offsetX2 " + Math.round(offsetX2) + " offsetY2 " + Math.round(offsetY2) + " rameno2 " + Math.round(rameno2), 100, 80);
                 
                 //myDataRef.set(info1);
-                if (db)
-                {
-                    var d = new Date();
-                    myDataRef.push({info1: info1, info2: info2, info3: info3, info4: info4, lastPlayer: whoHitTheBall, timestamp: d.toTimeString()});
-                }
+                // if (db)
+                // {
+                //     var d = new Date();
+                //     myDataRef.push({info1: info1, info2: info2, info3: info3, info4: info4, lastPlayer: whoHitTheBall, timestamp: d.toTimeString()});
+                // }
             }
             
             function drawInfo(db) {
