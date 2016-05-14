@@ -1,9 +1,11 @@
 * { padding: 0; margin: 10; }
 #myCanvas1 { display: block; margin: 0 auto; }
-#myCanvas { background: #088A4B; display: block; margin: 0 auto; }
+/*#myCanvas { background: #088A4B; display: block; margin: 0 auto; }*/
+#myCanvas { background: url("http://freakify.com/wp-content/uploads/2013/10/2011-02-11_Stucco_paint_texture-2.jpg") no-repeat; background-size:100% 100%; display: block; margin: 0 auto; }
 #myCanvas2 { background: black; display: block; margin: 0 auto; }
 body {
-    background: url("https://dl.dropboxusercontent.com/s/pdyd4kqet7w3zsn/Retro-Vintage-Sports-Icons.jpg?dl=0");
+    /*background: url("https://dl.dropboxusercontent.com/s/pdyd4kqet7w3zsn/Retro-Vintage-Sports-Icons.jpg?dl=0");*/
+    background: url("https://newevolutiondesigns.com/images/freebies/retro-wallpaper-1.jpg");
 }
 
 .fontMenu {
