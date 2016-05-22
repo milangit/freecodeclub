@@ -93,8 +93,8 @@
             var upperPlayerName = "horní hráč";
             var lowerPlayerName = "spodní hráč";
             
-            upperPlayerName = prompt("Zadej jméno horního hráče:", "").trim();
-            lowerPlayerName = prompt("Zadej jméno spodního hráče:", "").trim();
+            upperPlayerName = prompt("Zadej jméno horního hráče:", "").trim() + "(H)";
+            lowerPlayerName = prompt("Zadej jméno spodního hráče:", "").trim() + "(D)";
             
             
             document.addEventListener("keydown", keyDownHandler, false); //nastavení zachytávače události klávesa je stisknuta
@@ -136,19 +136,23 @@
             }
             
             function drawGameOver(hrac) {
+                var napisStiskniM =  "Stiskni M pro obnovení stránky.";
+                
                 var d = new Date();
                 myDataRef.push({winner: hrac, timestamp: d.toTimeString()});
     
                 var fontSizeV = canvas2.height * 0.7;
-                var napis = "Vyhrál " + hrac + "          " + "Stiskni M pro obnovení stránky.";
+                var napis = "Vyhrál " + hrac + " " + napisStiskniM;
                 var fontSizeH = (canvas2.width / napis.length) * 1.5;
                 var fontSize = Math.min(fontSizeV, fontSizeH);
+                var offset = fontSize * 0.6;
                 
                 ctx2.clearRect(0, 0, canvas.width, canvas.height); //vyčisti plátno
                 ctx2.font = fontSize + "px Courier New";
                 ctx2.fillStyle = "white";
                 
-                ctx2.fillText(napis, 10, fontSize);
+                ctx2.fillText("Vyhrál " + hrac, 10, fontSize);
+                ctx2.fillText(napisStiskniM, canvas2.width - napisStiskniM.length * offset , fontSize);
             }
             
             function drawScore() {
