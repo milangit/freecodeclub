@@ -7,7 +7,7 @@
 body {
     /*background: url("https://dl.dropboxusercontent.com/s/pdyd4kqet7w3zsn/Retro-Vintage-Sports-Icons.jpg?dl=0");*/
     /*background: url("https://newevolutiondesigns.com/images/freebies/retro-wallpaper-1.jpg");*/
-    overflow:hidden; /*schování scrollbaru*/
+    /*overflow:hidden; /*schování scrollbaru*/
     background-color: LightGreen;
 }
 
@@ -18,21 +18,27 @@ body {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
-}
-
-ul {
-    list-style-type: none;
+	
+	list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
 }
 
-li {
+/*ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*    background-color: #333;*/
+/*}*/
+
+.liclass {
     float: left;
 }
 
-li a, .dropbtn {
+.liclass a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -40,11 +46,11 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+.liclass a:hover, .dropdown:hover .dropbtn {
     background-color: red;
 }
 
-li.dropdown {
+.liclass.dropdown {
     display: inline-block;
 }
 
