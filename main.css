@@ -1,79 +1,19 @@
-* { padding: 0; margin: 10; }
-/*#myCanvas1 { display: block; margin: 0 auto; }*/
-/*#myCanvas { background: #088A4B; display: block; margin: 0 auto; }*/
-/*#myCanvas { background: url("http://freakify.com/wp-content/uploads/2013/10/2011-02-11_Stucco_paint_texture-2.jpg") no-repeat; background-size:100% 100%; display: block; margin: 0 auto; }*/
-#myCanvas { background-color: Brown; display: block; margin: 0 auto; }
-#myCanvas2 { background: black; display: block; margin: 0 auto; }
-body {
-    /*background: url("https://dl.dropboxusercontent.com/s/pdyd4kqet7w3zsn/Retro-Vintage-Sports-Icons.jpg?dl=0");*/
-    /*background: url("https://newevolutiondesigns.com/images/freebies/retro-wallpaper-1.jpg");*/
-    /*overflow:hidden; /*schování scrollbaru*/
+#myCanvas
+{
+    background-color: Brown;
+    display: block;
+    margin: 0 auto;
+}
+
+#myCanvas2
+{
+    background: black;
+    display: block;
+    margin: 0 auto;
+}
+
+body
+{
     background-color: LightGreen;
 }
 
-.fontMenu {
-    font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-	font-size: 18px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 26.4px;
-	
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-/*ul {*/
-/*    list-style-type: none;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    overflow: hidden;*/
-/*    background-color: #333;*/
-/*}*/
-
-.liclass {
-    float: left;
-}
-
-.liclass a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.liclass a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-.liclass.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a
-{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content
-{
-    display: block;
-}      	

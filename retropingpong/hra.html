@@ -28,11 +28,11 @@ Nulla est. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, 
 
 Integer imperdiet lectus quis justo. Maecenas sollicitudin. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Phasellus faucibus molestie nisl. Praesent id justo in neque elementum ultrices. Aenean placerat. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Maecenas libero. Phasellus faucibus molestie nisl. Aliquam erat volutpat. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Nullam sit amet magna in magna gravida vehicula. Aliquam ornare wisi eu metus. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui. Cras elementum. Nullam eget nisl. Maecenas libero. Nunc dapibus tortor vel mi dapibus sollicitudin. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien.
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-8">
                     <canvas id="myCanvas" width="1000" height="600">Your browser does not support the HTML5 canvas tag.</canvas>
                     <canvas id="myCanvas2" width="1000" height="100">Your browser does not support the HTML5 canvas tag.</canvas>
                 </div>
-                <div class="col-xs-8"></div>
+                <div class="col-xs-2"></div>
             </div>
         </div>
         <script>
@@ -101,13 +101,11 @@ Integer imperdiet lectus quis justo. Maecenas sollicitudin. Itaque earum rerum h
             
             var omezovacRychlostiToceni = 0;
             
-            var audio = new Audio('http://www.freesfx.co.uk/rx2/mp3s/2/1073_1246634800.mp3'); //spodní pálka
-            var audio2 = new Audio('http://static1.grsites.com/archive/sounds/misc/misc124.mp3'); //horní pálka
-            var audio3 = new Audio('http://static1.grsites.com/archive/sounds/misc/misc128.mp3'); //boční stěna
-            var audioFail = new Audio('https://dl.dropboxusercontent.com/s/i1m6b13t4iqevlk/fail.mp3?dl=0'); //fail
+            var audio = new Audio('https://dl.dropboxusercontent.com/s/6l4a01aybhr8xk1/spodniUder.mp3?dl=0'); //spodní pálka
+            var audio2 = new Audio('https://dl.dropboxusercontent.com/s/39p11je6vkceyhi/horniUder.mp3?dl=0'); //horní pálka
+            var audio3 = new Audio('https://dl.dropboxusercontent.com/s/r7va9rvfu7m2lqy/bocniStena.mp3?dl=0'); //boční stěna
+            var audioFail = new Audio('https://dl.dropboxusercontent.com/s/er2iznwvim7r7fp/video_game_power_up.mp3?dl=0'); //fail
             var audioWin = new Audio('https://dl.dropboxusercontent.com/s/9wsg15rfmnt9dnf/victory_fanfare.mp3?dl=0'); //fail
-            
-            
             
             var upperPlayerName = "horní hráč";
             var lowerPlayerName = "spodní hráč";
@@ -149,9 +147,11 @@ Integer imperdiet lectus quis justo. Maecenas sollicitudin. Itaque earum rerum h
                 ctx.clearRect(0, 0, canvas2.width, canvas2.height); //vyčisti plátno
                 ctx.font = fontSize + "px Courier New";
                 ctx.fillStyle = "white";
-                ctx.fillText("Spodní hráč je ovládán šipkami, horní hráč klávesami A,D,W,S.", 10, fontSize * 1.5);
-                ctx.fillText(radek2, 10, fontSize * 3);
-                ctx.fillText("Začni hru stisknutím klávesy N.      Hraje se do 3 bodů.", 10, fontSize * 4.5);
+                ctx.fillText("Spodní hráč je ovládán číslicemi 1,2,3,5 na numerické klávesnici.", 10, fontSize * 1.5);
+                ctx.fillText("Horní hráč klávesami A,D,W,S.", 10, fontSize * 3);
+                ctx.fillText(radek2, 10, fontSize * 4.5);
+                ctx.fillText("Začni hru stisknutím klávesy N. (může být potřeba předtím kliknout myší do hrací plochy)", 10, fontSize * 6);
+                ctx.fillText("Hraje se do 3 bodů.", 10, fontSize * 7.5);
             }
             
             function drawGameOver(hrac) {
