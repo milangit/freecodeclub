@@ -32,8 +32,16 @@
                         <li>Hra je vykreslována na HTML element <b>&lt;canvas&gt;</b> a zvukové efekty jsou zajištěny HTML elementem <b>&lt;audio&gt;</b></li>
                         <li>Za zmínku stojí využití databáze <a href="https://www.firebase.com" target="_blank"><b>Firebase</b></a>, která poskytuje velmi přívětivé <a href="https://cs.wikipedia.org/wiki/API" target="_blank"><b>API</b></a></li>
                     </ul>
-                    
-                    
+                    </br>
+                    <p><b>Návod ke hře:</b></p>
+                    <ul>
+                        <li>Poté co vstoupíte na stránku nebo ji obnovíte je třeba zadat jména hráčů do 2 vyskakovacích dialogových oken, jinak se hra nespustí</li>
+                        <li>Hraje se do 3 bodů</li>
+                        <li>Spodní hráč je ovládán číslicemi 1,2,3,5 na numerické klávesnici</li>
+                        <li>Horní hráč klávesami A,D,W,S</li>
+                        <li>Hraje se do 3 bodů</li>
+                        <li>Hru lze pozastavit klávesou P</li>
+                    </ul>
                     
                 </div>
                 <div class="col-xs-8">
@@ -148,18 +156,15 @@
                 
                 
                 var fontSizeV = canvas2.height * 0.45;
-                var radek2 = "Snaž se zabránit, aby se míček dotkl okraje hrací plochy na tvé polovině.";
+                var radek2 = "(může být potřeba předtím kliknout myší do hrací plochy)";
                 var fontSizeH = (canvas2.width / radek2.length) * 1.5;
                 var fontSize = Math.min(fontSizeV, fontSizeH);
                 
                 ctx.clearRect(0, 0, canvas2.width, canvas2.height); //vyčisti plátno
                 ctx.font = fontSize + "px Courier New";
                 ctx.fillStyle = "white";
-                ctx.fillText("Spodní hráč je ovládán číslicemi 1,2,3,5 na numerické klávesnici.", 10, fontSize * 1.5);
-                ctx.fillText("Horní hráč klávesami A,D,W,S.", 10, fontSize * 3);
-                ctx.fillText(radek2, 10, fontSize * 4.5);
-                ctx.fillText("Začni hru stisknutím klávesy N. (může být potřeba předtím kliknout myší do hrací plochy)", 10, fontSize * 6);
-                ctx.fillText("Hraje se do 3 bodů.", 10, fontSize * 7.5);
+                ctx.fillText("Začni hru stisknutím klávesy N.", 10, fontSize * 1.5);
+                ctx.fillText(radek2, 10, fontSize * 3);
             }
             
             function drawGameOver(hrac) {
