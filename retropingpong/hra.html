@@ -342,7 +342,8 @@
                         if (scoreUpperPlayer == 3)
                         {
                             audioWin.play();
-                            clearInterval(interval);
+                            //clearInterval(interval);
+                            intervalRunning = false;
                             drawGameOver(upperPlayerName);
                         }
                         else
@@ -356,7 +357,8 @@
                         if (scoreBottomPlayer == 3)
                         {
                             audioWin.play();
-                            clearInterval(interval);
+                            //clearInterval(interval);
+                            intervalRunning = false;
                             drawGameOver(lowerPlayerName);
                         }
                         {
@@ -379,7 +381,8 @@
                         if (scoreUpperPlayer == 3)
                         {
                             audioWin.play();
-                            clearInterval(interval);
+                            //clearInterval(interval);
+                            intervalRunning = false;
                             drawGameOver(upperPlayerName);
                         }
                         else
@@ -393,7 +396,8 @@
                         if (scoreBottomPlayer == 3)
                         {
                             audioWin.play();
-                            clearInterval(interval);
+                            //clearInterval(interval);
+                            intervalRunning = false;
                             drawGameOver(lowerPlayerName);
                         }
                         else
@@ -498,7 +502,8 @@
                     if (scoreBottomPlayer == 3)
                     {
                         audioWin.play();
-                        clearInterval(interval);
+                        //clearInterval(interval);
+                        intervalRunning = false;
                         drawGameOver(lowerPlayerName);
                     }
                     else
@@ -544,7 +549,8 @@
                     if (scoreUpperPlayer == 3)
                     {
                         audioWin.play();
-                        clearInterval(interval);
+                        //clearInterval(interval);
+                        intervalRunning = false;
                         drawGameOver(upperPlayerName);
                     }
                     else
@@ -611,6 +617,10 @@
                             angle2 -= 5;   
                         }
                     }
+                }
+                if (intervalRunning)
+                {
+                    requestAnimationFrame(draw);
                 }
             }
             
@@ -773,9 +783,10 @@
                 
                 //start hry klávesou N
                 if(e.keyCode == 78) { // N
-                    clearInterval(interval);
-                    interval = setInterval(draw, 10); //nastavení zachytávače události uplynutí 10ms
+                    //clearInterval(interval);
+                    //interval = setInterval(draw, 10); //nastavení zachytávače události uplynutí 10ms
                     intervalRunning = true;
+                    draw();
                     audio.play();
                     //draw();
                 }
@@ -836,12 +847,14 @@
                 if(e.keyCode == 80) { // p - pause
                     if (intervalRunning == false)
                     {
-                        interval = setInterval(draw, 10);
+                        //interval = setInterval(draw, 10);
                         intervalRunning = true;
+                        draw();
+                        
                     }
                     else
                     {
-                        clearInterval(interval);
+                        //clearInterval(interval);
                         intervalRunning = false;
                     }
                 }
