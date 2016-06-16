@@ -55,12 +55,11 @@
                             <img src="https://dl.dropboxusercontent.com/s/y8u2pev8xap3lta/programmer.PNG?dl=0" alt="Hledám C# programátora na zajímavý projekt" style="width: 100%;height: auto">
                         </a>
                     </div>
-                </a>
                 </div>
             </div>
         </div>
         <script>
-            var myDataRef = new Firebase('https://milantest1.firebaseio.com/');
+            var myDataRef = new Firebase('https://retropingpong.firebaseio.com/');
             
             //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
             var canvas = document.getElementById("myCanvas"); //vytvoření plátna
@@ -137,7 +136,6 @@
             upperPlayerName = prompt("Zadej jméno horního hráče:", "").trim() + "(H)";
             lowerPlayerName = prompt("Zadej jméno spodního hráče:", "").trim() + "(D)";
             
-            
             document.addEventListener("keydown", keyDownHandler, false); //nastavení zachytávače události klávesa je stisknuta
             document.addEventListener("keyup", keyUpHandler, false); //nastavení zachytávače události klávesa je uvolněna
             
@@ -176,10 +174,25 @@
             }
             
             function drawGameOver(hrac) {
+                
+                var msg = new SpeechSynthesisUtterance('The winner is ' + hrac.replace('(D)','').replace('(H)',''));
+                msg.onend = function(e) {
+                    audioWin.play();
+                };
+                window.speechSynthesis.speak(msg);  
+                
                 var napisStiskniM =  "Stiskni M pro obnovení stránky.";
                 
                 var d = new Date();
-                myDataRef.push({winner: hrac, timestamp: d.toTimeString()});
+                myDataRef.push(
+                    {
+                        winner: hrac,
+                        timestamp: d.toDateString() + " " + d.toTimeString(),
+                        bottomPlayer: lowerPlayerName,
+                        bottomPlayerPoints: scoreBottomPlayer,
+                        upperPlayer: upperPlayerName,
+                        upperPlayerPoints: scoreUpperPlayer
+                    });
     
                 var fontSizeV = canvas2.height * 0.7;
                 var napis = "Vyhrál " + hrac + " " + napisStiskniM;
@@ -336,7 +349,6 @@
                         upperPlayerScored();
                         if (scoreUpperPlayer == 3)
                         {
-                            audioWin.play();
                             //clearInterval(interval);
                             intervalRunning = false;
                             drawGameOver(upperPlayerName);
@@ -351,7 +363,6 @@
                         bottomPlayerScored();
                         if (scoreBottomPlayer == 3)
                         {
-                            audioWin.play();
                             //clearInterval(interval);
                             intervalRunning = false;
                             drawGameOver(lowerPlayerName);
@@ -375,7 +386,6 @@
                         upperPlayerScored();
                         if (scoreUpperPlayer == 3)
                         {
-                            audioWin.play();
                             //clearInterval(interval);
                             intervalRunning = false;
                             drawGameOver(upperPlayerName);
@@ -390,7 +400,6 @@
                         bottomPlayerScored();
                         if (scoreBottomPlayer == 3)
                         {
-                            audioWin.play();
                             //clearInterval(interval);
                             intervalRunning = false;
                             drawGameOver(lowerPlayerName);
@@ -496,7 +505,6 @@
                     
                     if (scoreBottomPlayer == 3)
                     {
-                        audioWin.play();
                         //clearInterval(interval);
                         intervalRunning = false;
                         drawGameOver(lowerPlayerName);
@@ -543,7 +551,6 @@
                     
                     if (scoreUpperPlayer == 3)
                     {
-                        audioWin.play();
                         //clearInterval(interval);
                         intervalRunning = false;
                         drawGameOver(upperPlayerName);
@@ -872,11 +879,11 @@
             
             function updateSize()
             {
-                canvas.width = window.innerWidth * 0.67;
+                canvas.width = window.innerWidth * 0.66;
                 canvas.height = window.innerHeight * 0.93;
                 //canvas.height = document.documentElement.clientHeight * 0.95;
                 
-                canvas2.width = window.innerWidth  * 0.67;
+                canvas2.width = window.innerWidth  * 0.66;
                 canvas2.height = window.innerHeight * 0.05;
                 //canvas2.height = document.documentElement.clientHeight * 0.95;
             }
